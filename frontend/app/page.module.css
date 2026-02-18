@@ -1,0 +1,221 @@
+/* page.module.css */
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* 2/3 for main, 1/3 for sidebar */
+  height: 100vh;
+  gap: 15px;
+  background-color: #0f1011;
+  /* Dark background */
+  /* padding: 15px; */
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+  /* Or similar elegant font */
+  color: #e0d8c3;
+  /* Beige/Gold text */
+}
+
+/* Left Hero Section */
+.heroSection {
+  position: relative;
+  background: url('/images/img1.png') no-repeat center center/cover;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  /* Darken image slightly */
+  z-index: 1;
+}
+
+.navBar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-right: auto;
+}
+
+.navLink {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.navLink:hover {
+  opacity: 1;
+}
+
+.bookBtn {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+.bookBtn:hover {
+  background: white;
+  color: black;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  margin-bottom: 40px;
+}
+
+.heroTitle {
+  font-size: 6rem;
+  line-height: 0.9;
+  font-weight: 400;
+  color: #f0e6d2;
+  text-transform: uppercase;
+  max-width: 600px;
+}
+
+.socialIcons {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2;
+  display: flex;
+  gap: 15px;
+}
+
+.socialIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.socialIcon:hover {
+  background: white;
+  color: black;
+}
+
+/* Right Sidebar Grid */
+.sidebar {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 50%);
+  z-index: 1;
+}
+
+.card:hover {
+  transform: scale(0.98);
+}
+
+.cardTitle {
+  position: relative;
+  z-index: 2;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #e0d8c3;
+}
+
+.arrowIcon {
+  position: relative;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+/* Card Backgrounds */
+.menuCard {
+  background: url('/images/img2.png') no-repeat center center/cover;
+}
+
+.reservationCard {
+  background: url('/images/img3.png') no-repeat center center/cover;
+}
+
+.restaurantCard {
+  background: url('/images/img4.png') no-repeat center center/cover;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .sidebar {
+    height: 600px;
+    /* specific height for mobile stack */
+  }
+
+  .heroSection {
+    height: 60vh;
+  }
+}

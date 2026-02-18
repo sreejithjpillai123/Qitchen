@@ -1,0 +1,232 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: #e0d8c3;
+    background-color: #0c0c0c;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Left Section - Image */
+.heroSection {
+    flex: 1;
+    position: relative;
+    background: url('/images/reservation.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: flex-end;
+    padding: 60px;
+    min-height: 100vh;
+    display: flex;
+}
+
+/* Add an overlay to ensure text readability if needed, though image suggests clear shot */
+.heroSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
+.heroTitle {
+    position: relative;
+    z-index: 2;
+    font-family: 'Times New Roman', serif;
+    font-size: 5rem;
+    line-height: 1;
+    color: #fceecb;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+/* Right Section - Form */
+.formSection {
+    flex: 1;
+    background-color: #0b0b0b;
+    /* Very dark background */
+    padding: 60px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+
+
+}
+
+.formContainer {
+    width: 100%;
+    max-width: 450px;
+
+}
+
+.titleContainer {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.pageTitle {
+    font-family: 'Times New Roman', serif;
+    font-size: 2rem;
+    color: #a8a08d;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.pageTitle::before,
+.pageTitle::after {
+    content: '◇';
+    font-size: 1rem;
+    color: #444;
+}
+
+.subtitle {
+    display: block;
+    margin-top: 15px;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    display: none;
+    /* Hiding labels as per design (placeholders used) */
+}
+
+.input {
+    width: 100%;
+    padding: 10px 16px;
+    background-color: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 8px;
+    color: #ccc;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input:focus {
+    border-color: #444;
+}
+
+.input::placeholder {
+    color: #555;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+.row .inputGroup {
+    flex: 1;
+}
+
+.reserveBtn {
+    width: 100%;
+    padding: 12px;
+    background-color: #f3e5c9;
+    /* Beige/Gold */
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.reserveBtn:hover {
+    background-color: #e0d2b4;
+}
+
+.footer {
+    margin-top: auto;
+    padding-top: 40px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #1a1a1a;
+    color: #444;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.success {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4caf50;
+    border: 1px solid #4caf50;
+}
+
+.error {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #f44336;
+    border: 1px solid #f44336;
+}
+
+/* Date/Time Input Specifics to make them look nice */
+.input[type="date"],
+.input[type="time"],
+select.input {
+    color-scheme: dark;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .heroSection {
+        min-height: 40vh;
+        padding: 40px;
+    }
+
+    .heroTitle {
+        font-size: 3rem;
+    }
+
+    .formSection {
+        padding: 40px 20px;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

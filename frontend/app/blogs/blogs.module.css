@@ -1,0 +1,163 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    background-color: #0c0d0e;
+    color: #e0d8c3;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Left Side - Hero Image */
+.heroSection {
+    position: relative;
+    background: url('/images/blog.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 60px;
+}
+
+.heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
+}
+
+.pageTitle {
+    position: relative;
+    z-index: 2;
+    font-size: 5rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #e0d8c3;
+    margin: 0;
+}
+
+/* Right Side - Blog List */
+.blogListContent {
+    padding: 80px 60px;
+    overflow-y: auto;
+    background-color: #0c0d0e;
+}
+
+.sectionHeader {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.sectionSubtitle {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #bfa888;
+    margin-bottom: 10px;
+}
+
+.blogItem {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 40px;
+    transition: transform 0.3s;
+}
+
+.blogItem:hover {
+    transform: translateX(10px);
+}
+
+.blogImageContainer {
+    width: 200px;
+    height: 130px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.blogImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.blogItem:hover .blogImage {
+    transform: scale(1.05);
+}
+
+.blogDetails {
+    flex: 1;
+}
+
+.blogDate {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.blogTitle {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    color: #f0f0f0;
+    line-height: 1.4;
+}
+
+.blogExcerpt {
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    color: #999;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.readMore {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #bfa888;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.readMore:hover {
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .heroSection {
+        height: 40vh;
+        padding: 30px;
+    }
+
+    .pageTitle {
+        font-size: 3rem;
+    }
+
+    .blogListContent {
+        padding: 40px 20px;
+    }
+
+    .blogItem {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .blogImageContainer {
+        width: 100%;
+        height: 200px;
+    }
+}

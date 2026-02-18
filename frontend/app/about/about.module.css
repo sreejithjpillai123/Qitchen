@@ -1,0 +1,217 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    /* Fixed viewport height */
+    overflow: hidden;
+    /* Prevent body scroll */
+    background-color: #0c0d0e;
+    color: #e0d8c3;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Left Side - Hero Image */
+.heroSection {
+    position: relative;
+    background: url('/images/about1.png') no-repeat center center/cover;
+    height: 100%;
+    /* Fill container */
+    display: flex;
+    align-items: flex-end;
+    padding: 60px;
+}
+
+.heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.pageTitle {
+    position: relative;
+    z-index: 2;
+    font-size: 5rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #e0d8c3;
+    margin: 0;
+}
+
+/* Right Side - Content */
+/* Right Side - Content */
+.aboutContent {
+    padding: 30px;
+    /* Reduced from 60px 40px */
+    height: 100vh;
+    overflow: hidden;
+    /* Prevent scroll */
+    background-color: #0c0d0e;
+    display: grid;
+    grid-template-rows: 2fr 1fr 2fr auto;
+    /* Distribute height properly */
+    gap: 15px;
+    /* Reduced gap */
+}
+
+/* Card Styles */
+.card {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.02) 0%, rgba(0, 0, 0, 0) 100%);
+    position: relative;
+    height: 100%;
+}
+
+/* Row 1 & 3 Layout */
+.rowSplit {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    height: 100%;
+    /* Fill the grid row */
+    min-height: 0;
+    /* Allow shrinking */
+}
+
+.textCardContent {
+    padding: 30px;
+    /* Reduced padding */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mainTitle {
+    font-size: 1.5rem;
+    /* Reduced font size */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #d4a373;
+    line-height: 1.3;
+}
+
+.description {
+    font-family: sans-serif;
+    font-size: 0.85rem;
+    /* Reduced font size */
+    color: #888;
+    line-height: 1.5;
+}
+
+.coverImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Row 2: Awards */
+.awardsRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    height: 100%;
+}
+
+.awardCardContent {
+    padding: 15px;
+    /* Reduced padding */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.stars {
+    color: #e0d8c3;
+    font-size: 0.7rem;
+    /* Reduced size */
+    margin-bottom: 8px;
+    letter-spacing: 3px;
+}
+
+.awardTitle {
+    font-size: 0.85rem;
+    /* Reduced size */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #d4a373;
+    margin-bottom: 5px;
+}
+
+.awardSubtitle {
+    font-family: sans-serif;
+    font-size: 0.65rem;
+    /* Reduced size */
+    color: #666;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+/* Row 3 Content */
+.storyTextContent {
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.sectionTitle {
+    font-size: 1.2rem;
+    /* Reduced size */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    color: #d4a373;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sectionTitle::before,
+.sectionTitle::after {
+    content: '◇';
+    font-size: 0.8rem;
+    color: #444;
+}
+
+.footerRow {
+    text-align: center;
+    padding: 10px 0 0 0;
+    margin-top: 5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #555;
+    font-family: sans-serif;
+    font-size: 0.65rem;
+}
+
+@media (max-width: 1024px) {
+    .rowSplit {
+        grid-template-columns: 1fr;
+        /* Stack on smaller screens */
+    }
+
+    .awardsRow {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .heroSection {
+        height: 40vh;
+    }
+}

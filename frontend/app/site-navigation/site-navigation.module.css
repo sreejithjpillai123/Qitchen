@@ -1,0 +1,41 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #050505;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: absolute;
+    /* To cover main content area if needed, but since it's a page, it fits in main */
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.content {
+    text-align: center;
+    padding: 80px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.link {
+    font-family: 'Times New Roman', serif;
+    font-size: 3rem;
+    /* Slightly larger for emphasis on dedicated page */
+    color: #e0d8c3;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.link:hover {
+    color: #fff;
+    opacity: 1;
+    transform: scale(1.05);
+    /* Added subtle scale effect */
+}
