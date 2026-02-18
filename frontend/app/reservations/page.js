@@ -10,7 +10,7 @@ export default function ReservationPage() {
         phone: '',
         date: '',
         time: '',
-        partySize: ""
+        partySize: "    "
     });
     const [status, setStatus] = useState({ type: '', message: '' });
     const [hours, setHours] = useState([]);

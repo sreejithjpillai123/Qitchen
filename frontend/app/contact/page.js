@@ -29,7 +29,7 @@ export default function ContactPage() {
             {/* Left Section - Hero Image with Title */}
             <div className={styles.heroSection} style={{ backgroundImage: "url('/images/contact.png')" }}>
                 {/* Note: User needs to add an image at /public/img/contact-hero.jpg or update this path */}
-                <h1 className={styles.heroTitle}>CONTACT</h1>
+                <div className={styles.heroTitle}>CONTACT</div>
             </div>
 
             {/* Right Section - Grid Content */}
