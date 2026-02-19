@@ -4,6 +4,14 @@ import { useParams, useRouter } from 'next/navigation';
 import api from '../../../lib/api';
 import styles from '../blog-post.module.css';
 
+const formatDate = (dateStr) => {
+    const date = new Date(dateStr);
+    const day = date.getDate();
+    const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    const suffix = (day === 1 || day === 21 || day === 31) ? 'ST' : (day === 2 || day === 22) ? 'ND' : (day === 3 || day === 23) ? 'RD' : 'TH';
+    return `${day}${suffix} ${months[date.getMonth()]} ${date.getFullYear()}`;
+};
+
 export default function SingleBlogPage() {
     const { id } = useParams();
     const router = useRouter();
@@ -46,7 +54,7 @@ export default function SingleBlogPage() {
             {/* Right Section - Content */}
             <div className={styles.contentSection}>
                 <div className={styles.headerDate}>
-                    {new Date(blog.createdAt).toLocaleDateString()}
+                    {formatDate(blog.createdAt)}
                 </div>
 
                 <div className={styles.title}>{blog.title}</div>

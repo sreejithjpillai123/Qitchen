@@ -4,6 +4,14 @@ import Link from 'next/link';
 import api from '../../lib/api';
 import styles from './blogs.module.css';
 
+const formatDate = (dateStr) => {
+    const date = new Date(dateStr);
+    const day = date.getDate();
+    const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    const suffix = (day === 1 || day === 21 || day === 31) ? 'ST' : (day === 2 || day === 22) ? 'ND' : (day === 3 || day === 23) ? 'RD' : 'TH';
+    return `${day}${suffix} ${months[date.getMonth()]} ${date.getFullYear()}`;
+};
+
 export default function BlogPage() {
     const [blogs, setBlogs] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -51,7 +59,7 @@ export default function BlogPage() {
                             <Link href={`/blogs/${blog._id}`} className={styles.blogDetails} style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <div className={styles.dateRow}>
                                     <img src="/images/arrow.png" alt="arrow" className={styles.arrowIcon} />
-                                    <span className={styles.blogDate}>{new Date(blog.createdAt).toLocaleDateString()}</span>
+                                    <span className={styles.blogDate}>{formatDate(blog.createdAt)}</span>
                                 </div>
                                 <div className={styles.blogTitle}>{blog.title}</div>
                                 <p className={styles.blogExcerpt}>{blog.content.substring(0, 100)}...</p>
