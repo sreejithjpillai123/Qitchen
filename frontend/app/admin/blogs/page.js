@@ -6,10 +6,8 @@ import api from '../../../lib/api';
 export default function AdminBlogsPage() {
     const [blogs, setBlogs] = useState([]);
     const [form, setForm] = useState({ title: '', subtitle: '', content: '', detailContent: '', image: '' });
-    const [imageFile, setImageFile] = useState(null);
-    const [imagePreview, setImagePreview] = useState('');
-    const [uploading, setUploading] = useState(false);
     const [editingId, setEditingId] = useState(null);
+    const [saving, setSaving] = useState(false);
 
     useEffect(() => {
         fetchBlogs();
@@ -20,63 +18,31 @@ export default function AdminBlogsPage() {
         setBlogs(res.data);
     };
 
-    const handleImageSelect = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            setImageFile(file);
-            setImagePreview(URL.createObjectURL(file));
-        }
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setUploading(true);
+        setSaving(true);
 
         try {
-            let imageUrl = form.image;
-
-            // Upload image if a file was selected
-            if (imageFile) {
-                const formData = new FormData();
-                formData.append('image', imageFile);
-
-                const uploadRes = await api.post('/upload/upload', formData, {
-                    headers: { 'Content-Type': 'multipart/form-data' }
-                });
-
-                imageUrl = `http://localhost:5000${uploadRes.data.imagePath}`;
-            }
-
-            const blogData = {
-                ...form,
-                image: imageUrl
-            };
-
             if (editingId) {
-                await api.put(`/blogs/${editingId}`, blogData);
+                await api.put(`/blogs/${editingId}`, form);
             } else {
-                await api.post('/blogs', blogData);
+                await api.post('/blogs', form);
             }
 
             setForm({ title: '', subtitle: '', content: '', detailContent: '', image: '' });
-            setImageFile(null);
-            setImagePreview('');
             setEditingId(null);
             fetchBlogs();
         } catch (error) {
             console.error('Error saving blog:', error);
             alert('Failed to save blog post');
         } finally {
-            setUploading(false);
+            setSaving(false);
         }
     };
 
     const handleEdit = (blog) => {
         setForm(blog);
         setEditingId(blog._id);
-        if (blog.image) {
-            setImagePreview(blog.image);
-        }
     };
 
     const handleDelete = async (id) => {
@@ -88,8 +54,6 @@ export default function AdminBlogsPage() {
 
     const handleCancel = () => {
         setForm({ title: '', subtitle: '', content: '', detailContent: '', image: '' });
-        setImageFile(null);
-        setImagePreview('');
         setEditingId(null);
     };
 
@@ -102,37 +66,7 @@ export default function AdminBlogsPage() {
                     <input placeholder="24TH AUG 2023 (Subtitle)" className={styles.formInput} value={form.subtitle || ''} onChange={e => setForm({ ...form, subtitle: e.target.value })} />
                     <input placeholder="Title" className={styles.formInput} value={form.title || ''} onChange={e => setForm({ ...form, title: e.target.value })} required />
 
-                    {/* Image Upload */}
-                    <div className={styles.inputGroup}>
-                        <label className={styles.checkboxLabel}>Upload Image:</label>
-                        <input
-                            type="file"
-                            accept="image/*"
-                            onChange={handleImageSelect}
-                            style={{
-                                padding: '0.5rem',
-                                backgroundColor: '#1a1a1a',
-                                color: '#fff',
-                                border: '1px solid #444',
-                                borderRadius: '4px',
-                                width: '100%',
-                                marginTop: '0.5rem'
-                            }}
-                        />
-                        {imagePreview && (
-                            <img
-                                src={imagePreview}
-                                alt="Preview"
-                                style={{
-                                    marginTop: '1rem',
-                                    maxWidth: '200px',
-                                    maxHeight: '150px',
-                                    borderRadius: '8px',
-                                    objectFit: 'cover'
-                                }}
-                            />
-                        )}
-                    </div>
+                    <input placeholder="Image URL" className={styles.formInput} value={form.image || ''} onChange={e => setForm({ ...form, image: e.target.value })} />
 
                     <textarea placeholder="Short Excerpt (Shown on Blog List)" className={styles.formTextarea} style={{ gridColumn: '1 / -1', minHeight: '100px' }} value={form.content || ''} onChange={e => setForm({ ...form, content: e.target.value })} required />
 
@@ -145,8 +79,8 @@ export default function AdminBlogsPage() {
                     />
                 </div>
                 <div style={{ marginTop: '1.5rem', display: 'flex' }}>
-                    <button type="submit" className={styles.btnPrimary} disabled={uploading}>
-                        {uploading ? 'Uploading...' : editingId ? 'Update Post' : 'Create Post'}
+                    <button type="submit" className={styles.btnPrimary} disabled={saving}>
+                        {saving ? 'Saving...' : editingId ? 'Update Post' : 'Create Post'}
                     </button>
                     {editingId && <button type="button" onClick={handleCancel} className={styles.btnSecondary}>Cancel</button>}
                 </div>
