@@ -98,7 +98,7 @@
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #888;
+    color: rgb(241, 225, 184);
     margin-bottom: 10px;
     display: block;
 }
@@ -108,14 +108,14 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 15px;
-    color: #f0f0f0;
+    color: rgb(220, 200, 147);
     line-height: 1.4;
 }
 
 .blogExcerpt {
     font-family: sans-serif;
     font-size: 0.9rem;
-    color: #999;
+    color: rgb(233, 221, 193);
     line-height: 1.6;
     margin-bottom: 15px;
 }

@@ -12,7 +12,7 @@ export default function Home() {
 
         {/* Content */}
         <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>Sushi <br /> Sensation</h1>
+          <div className={styles.heroTitle}>Sushi <br /> Sensation</div>
         </div>
 
         {/* Social Icons */}
@@ -28,20 +28,26 @@ export default function Home() {
 
         {/* Menu Card */}
         <Link href="/menu" className={`${styles.card} ${styles.menuCard}`}>
-          <span className={styles.cardTitle}>Menu</span>
-          <div className={styles.arrowIcon}>→</div>
+          <span className={styles.cardTitle}>
+            Menu
+            <span className={styles.arrowIcon}>→</span>
+          </span>
         </Link>
 
         {/* Reservation Card */}
         <Link href="/reservations" className={`${styles.card} ${styles.reservationCard}`}>
-          <span className={styles.cardTitle}>Reservation</span>
-          <div className={styles.arrowIcon}>→</div>
+          <span className={styles.cardTitle}>
+            Reservation
+            <span className={styles.arrowIcon}>→</span>
+          </span>
         </Link>
 
         {/* Restaurant Card (About) */}
         <Link href="/about" className={`${styles.card} ${styles.restaurantCard}`}>
-          <span className={styles.cardTitle}>Our Restaurant</span>
-          <div className={styles.arrowIcon}>→</div>
+          <span className={styles.cardTitle}>
+            Our Restaurant
+            <span className={styles.arrowIcon}>→</span>
+          </span>
         </Link>
 
       </div>

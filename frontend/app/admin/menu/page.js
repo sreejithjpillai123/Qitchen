@@ -53,7 +53,7 @@ export default function AdminMenuPage() {
                 <div className={styles.inputGrid}>
                     <input placeholder="Name" className={styles.formInput} value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} required />
                     <input placeholder="Price" type="number" className={styles.formInput} value={form.price} onChange={e => setForm({ ...form, price: e.target.value })} required />
-                    <input placeholder="Category (e.g., Maki, Sashimi)" className={styles.formInput} value={form.category} onChange={e => setForm({ ...form, category: e.target.value })} required />
+                    <input placeholder="Item" className={styles.formInput} value={form.category} onChange={e => setForm({ ...form, category: e.target.value })} required />
                     <input placeholder="Image URL" className={styles.formInput} value={form.image} onChange={e => setForm({ ...form, image: e.target.value })} />
                     <textarea placeholder="Description" className={styles.formTextarea} style={{ gridColumn: '1 / -1', minHeight: '100px' }} value={form.description} onChange={e => setForm({ ...form, description: e.target.value })} required />
                     <label className={styles.checkboxLabel}>

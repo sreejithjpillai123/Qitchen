@@ -29,13 +29,13 @@ export default function BlogPage() {
             {/* Left Side: Hero Image */}
             <div className={styles.heroSection}>
                 <div className={styles.heroOverlay}></div>
-                <h1 className={styles.pageTitle}>Blog</h1>
+                <div className={styles.pageTitle}>Blog</div>
             </div>
 
             {/* Right Side: Blog List */}
             <div className={styles.blogListContent}>
                 <div className={styles.sectionHeader}>
-                    <h2 className={styles.sectionSubtitle}>BEHIND THE SCENES <br /> & LATEST NEWS</h2>
+                    <div className={styles.sectionSubtitle}>BEHIND THE SCENES <br /> & LATEST NEWS</div>
                 </div>
 
                 {blogs.length === 0 ? <p style={{ textAlign: 'center', marginTop: '50px' }}>No blog posts available.</p> : (
@@ -50,7 +50,7 @@ export default function BlogPage() {
                             </div>
                             <Link href={`/blogs/${blog._id}`} className={styles.blogDetails} style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <span className={styles.blogDate}>{blog.subtitle || new Date(blog.createdAt).toLocaleDateString()}</span>
-                                <h3 className={styles.blogTitle}>{blog.title}</h3>
+                                <div className={styles.blogTitle}>{blog.title}</div>
                                 <p className={styles.blogExcerpt}>{blog.content.substring(0, 100)}...</p>
                             </Link>
                         </div>

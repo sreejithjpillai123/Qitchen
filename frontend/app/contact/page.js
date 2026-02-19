@@ -65,7 +65,7 @@ export default function ContactPage() {
                     {/* 3. Map Card (Bottom Left) */}
                     <div className={styles.mapCard}>
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114964.53925916665!2d-80.29949920263963!3d25.782390733064336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b0a20ec8c111%3A0xff96f271ddad4f65!2sMiami%2C%20FL%2C%20USA!5e0!3m2!1sen!2sin!4v1692268482329!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.938500866967!2d76.3575545!3d10.2665391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7ef6fe83cb609%3A0xa2b72269240d53cf!2sWoxro!5e0!3m2!1sen!2sin!4v1692268482329!5m2!1sen!2sin"
                             className={styles.mapFrame}
                             allowFullScreen=""
                             loading="lazy"

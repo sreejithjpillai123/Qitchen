@@ -79,29 +79,41 @@
 
 .textCardContent {
     padding: 30px;
-    /* Reduced padding */
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .mainTitle {
-    font-size: 1.5rem;
-    /* Reduced font size */
+    font-size: 1.4rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    color: #d4a373;
-    line-height: 1.3;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+    color: #c9a96e;
+    line-height: 1.4;
+    font-weight: 400;
+    position: relative;
+    padding-top: 20px;
+}
+
+.mainTitle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: #c9a96e;
 }
 
 .description {
     font-family: sans-serif;
-    font-size: 0.85rem;
-    /* Reduced font size */
-    color: #888;
-    line-height: 1.5;
+    font-size: 0.68rem;
+    color: #7a7a7a;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+    margin-top: 20px;
 }
 
 .coverImage {

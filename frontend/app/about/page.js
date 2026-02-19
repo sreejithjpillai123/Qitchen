@@ -6,7 +6,7 @@ export default function AboutPage() {
             {/* Left Side: Hero Image */}
             <div className={styles.heroSection}>
                 <div className={styles.heroOverlay}></div>
-                <h1 className={styles.pageTitle}>About</h1>
+                <div className={styles.pageTitle}>About</div>
             </div>
 
             {/* Right Side: Content (Bento Grid) */}
