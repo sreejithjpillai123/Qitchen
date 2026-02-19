@@ -41,13 +41,13 @@ export default function BlogPage() {
                 {blogs.length === 0 ? <p style={{ textAlign: 'center', marginTop: '50px' }}>No blog posts available.</p> : (
                     blogs.map(blog => (
                         <div key={blog._id} className={styles.blogItem}>
-                            <div className={styles.blogImageContainer}>
+                            <Link href={`/blogs/${blog._id}`} className={styles.blogImageContainer}>
                                 <img
                                     src={blog.image || "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=200&auto=format&fit=crop"}
                                     alt={blog.title}
                                     className={styles.blogImage}
                                 />
-                            </div>
+                            </Link>
                             <Link href={`/blogs/${blog._id}`} className={styles.blogDetails} style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <div className={styles.dateRow}>
                                     <img src="/images/arrow.png" alt="arrow" className={styles.arrowIcon} />
