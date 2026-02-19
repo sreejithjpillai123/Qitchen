@@ -46,15 +46,15 @@ export default function SingleBlogPage() {
             {/* Right Section - Content */}
             <div className={styles.contentSection}>
                 <div className={styles.headerDate}>
-                    {blog.subtitle || new Date(blog.createdAt).toLocaleDateString()}
+                    {new Date(blog.createdAt).toLocaleDateString()}
                 </div>
 
-                <h1 className={styles.title}>{blog.title}</h1>
+                <div className={styles.title}>{blog.title}</div>
 
                 <div className={styles.contentBody}>
                     {/* Render content with line breaks */}
                     {/* Main Excerpt */}
-                    <p>{blog.content}</p>
+                    {/* <p>{blog.content}</p> */}
 
                     {/* Detailed Content */}
                     {blog.detailContent && (
@@ -73,7 +73,7 @@ export default function SingleBlogPage() {
                 </div>
 
                 {/* Back Link for UX */}
-                <button
+                {/* <button
                     onClick={() => router.back()}
                     style={{
                         marginTop: '20px',
@@ -88,7 +88,7 @@ export default function SingleBlogPage() {
                     }}
                 >
                     ← Back to Blogs
-                </button>
+                </button> */}
             </div>
         </div>
     );

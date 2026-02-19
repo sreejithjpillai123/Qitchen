@@ -49,7 +49,10 @@ export default function BlogPage() {
                                 />
                             </div>
                             <Link href={`/blogs/${blog._id}`} className={styles.blogDetails} style={{ textDecoration: 'none', color: 'inherit' }}>
-                                <span className={styles.blogDate}>{blog.subtitle || new Date(blog.createdAt).toLocaleDateString()}</span>
+                                <div className={styles.dateRow}>
+                                    <img src="/images/arrow.png" alt="arrow" className={styles.arrowIcon} />
+                                    <span className={styles.blogDate}>{new Date(blog.createdAt).toLocaleDateString()}</span>
+                                </div>
                                 <div className={styles.blogTitle}>{blog.title}</div>
                                 <p className={styles.blogExcerpt}>{blog.content.substring(0, 100)}...</p>
                             </Link>

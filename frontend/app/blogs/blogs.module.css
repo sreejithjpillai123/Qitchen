@@ -94,13 +94,24 @@
     flex: 1;
 }
 
+.dateRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.arrowIcon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
 .blogDate {
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: rgb(241, 225, 184);
-    margin-bottom: 10px;
-    display: block;
 }
 
 .blogTitle {

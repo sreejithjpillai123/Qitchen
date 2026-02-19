@@ -1,6 +1,8 @@
 # Restaurant Frontend
 
 This is the Next.js frontend for the Restaurant Website.
+Deployed at : https://qitchen-frontend-vb0f.onrender.com
+Admin at     : https://qitchen-frontend-vb0f.onrender.com/admin/dashboard
 
 ## Setup
 
