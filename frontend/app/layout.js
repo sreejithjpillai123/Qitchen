@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import "./globals.css";
+import LayoutBody from "./LayoutBody";
 
 export const metadata = {
   title: "Gourmet Restaurant",
@@ -9,13 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-        <main style={{ minHeight: '80vh' }}>
-          {children}
-        </main>
-
-      </body>
+      <LayoutBody>
+        {children}
+      </LayoutBody>
     </html>
   );
 }
