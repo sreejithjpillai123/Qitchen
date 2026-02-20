@@ -63,7 +63,7 @@ export default function BlogPage() {
                                 </div>
                                 <div className={styles.blogTitle}>{blog.title}</div>
                                 <p className={styles.blogExcerpt}>{blog.content.substring(0, 100)}...</p>
-                            </Link>
+                            </Link> 
                         </div>
                     ))
                 )}
