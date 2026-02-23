@@ -60,20 +60,57 @@
     line-height: 1.1;
     text-align: center;
     color: #fceecb;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+/* Thin divider after main title */
+.titleDivider {
+    width: 40px;
+    height: 1px;
+    background-color: #444;
+    margin: 0 auto 2.5rem auto;
 }
 
 /* Content Body */
 .contentBody {
     color: #bfbfbf;
-    font-size: 1rem;
-    line-height: 1.8;
-    white-space: pre-wrap;
-    /* Show line breaks entered by admin */
+    font-size: 0.95rem;
+    line-height: 1.85;
     margin-bottom: 3rem;
     font-weight: 300;
+}
+
+/* Each section block (heading + paragraph pair) */
+.sectionBlock {
+    margin-bottom: 0;
+}
+
+/* Section Heading */
+.sectionHeading {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #d9cdb3;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 3rem;
+    margin-bottom: 0.85rem;
+    line-height: 1.35;
+}
+
+/* Remove top margin on very first section heading */
+.sectionBlock:first-child .sectionHeading {
+    margin-top: 0;
+}
+
+/* Paragraphs inside content */
+.paragraph {
+    color: #8a8a8a;
+    font-size: 0.875rem;
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
 }
 
 /* Styling fake headers if user formats appropriately or just generalized */
