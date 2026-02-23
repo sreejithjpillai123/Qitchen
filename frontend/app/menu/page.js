@@ -3,6 +3,18 @@ import { useState, useEffect } from 'react';
 import api from '../../lib/api';
 import styles from './menu.module.css';
 
+const formatDate = (dateStr) => {
+    if (!dateStr) return '';
+    const date = new Date(dateStr);
+    const day = date.getDate();
+    const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN',
+        'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    const suffix = (day === 1 || day === 21 || day === 31) ? 'ST'
+        : (day === 2 || day === 22) ? 'ND'
+            : (day === 3 || day === 23) ? 'RD' : 'TH';
+    return `${day}${suffix} ${months[date.getMonth()]} ${date.getFullYear()}`;
+};
+
 export default function MenuPage() {
     const [menuItems, setMenuItems] = useState([]);
     const [categories, setCategories] = useState({});
@@ -96,6 +108,12 @@ export default function MenuPage() {
                                         />
 
                                         <div className={styles.itemDetails}>
+                                            {/* Date label above title */}
+                                            <div className={styles.itemDate}>
+                                                <span className={styles.itemDateDiamond}>◇</span>
+                                                {formatDate(item.createdAt)}
+                                            </div>
+
                                             <div className={styles.itemHeader}>
                                                 <span className={styles.itemName}>{item.name}</span>
                                                 <span className={styles.itemPrice}>${item.price}</span>
