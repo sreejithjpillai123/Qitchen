@@ -109,10 +109,10 @@ export default function MenuPage() {
 
                                         <div className={styles.itemDetails}>
                                             {/* Date label above title */}
-                                            <div className={styles.itemDate}>
+                                            {/* <div className={styles.itemDate}>
                                                 <span className={styles.itemDateDiamond}>◇</span>
                                                 {formatDate(item.createdAt)}
-                                            </div>
+                                            </div> */}
 
                                             <div className={styles.itemHeader}>
                                                 <span className={styles.itemName}>{item.name}</span>
